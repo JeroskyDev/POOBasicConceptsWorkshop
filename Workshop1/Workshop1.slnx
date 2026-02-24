@@ -1,1 +1,6 @@
-<Solution />
+<Solution>
+  <Folder Name="/TimeProgram.Backend/">
+    <File Path="Time.cs" />
+  </Folder>
+  <Folder Name="/TimeProgram.Frontend/" />
+</Solution>
