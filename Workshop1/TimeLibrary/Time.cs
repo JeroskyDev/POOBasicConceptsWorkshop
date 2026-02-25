@@ -121,10 +121,7 @@ namespace TimeLibrary
             hours = Hour + time.Hour + carryHours;
             minutes = minutes % 60;
 
-            if (hours > 23)
-            {
                 hours = hours % 24;
-            }
 
             return new Time(hours, minutes, seconds, milliseconds);
         }
