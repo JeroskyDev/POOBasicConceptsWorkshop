@@ -1,8 +1,9 @@
 <Solution>
-  <Folder Name="/TimeProgram.Backend/">
-    <Project Path="TimeLibrary/TimeLibrary.csproj" />
+  <Folder Name="/TimeProgram/" />
+  <Folder Name="/TimeProgram/TimeProgram.Backend/">
+    <Project Path="TimeLibrary/TimeProgram.ConsoleBackend.csproj" />
   </Folder>
-  <Folder Name="/TimeProgram.Frontend/">
-    <Project Path="TimeProgram.Frontend/TimeProgram.Frontend.csproj" />
+  <Folder Name="/TimeProgram/TimeProgram.Frontend/">
+    <Project Path="TimeProgram.Frontend/TimeProgram.ConsoleFrontend.csproj" />
   </Folder>
 </Solution>
