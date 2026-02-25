@@ -27,8 +27,6 @@ namespace TimeLibrary
             Millisecond = millisecond;
         }
 
-        
-
         //properties
         public int Hour
         {
@@ -67,11 +65,6 @@ namespace TimeLibrary
         public bool IsOtherDay(object Time)
         {
             return false;
-        }
-
-        public int ToHours(object Time, int hour)
-        {
-            return 0;
         }
 
         public int ToMinutes(object Time, int minute)
