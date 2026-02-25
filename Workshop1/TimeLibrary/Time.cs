@@ -81,7 +81,7 @@ namespace TimeLibrary
             int hourToDisplay = Hour; //temporal local variable to not change the whole Hour property
             if (hourToDisplay == 0)
             {
-                hourToDisplay = 12;
+                hourToDisplay = 0;
                 tt = "AM";
             }
             else if (hourToDisplay >= 1 && hourToDisplay <= 11)
@@ -121,16 +121,32 @@ namespace TimeLibrary
             hours = Hour + time.Hour + carryHours;
             minutes = minutes % 60;
 
-                hours = hours % 24;
-
+            hours = hours % 24;
+            
             return new Time(hours, minutes, seconds, milliseconds);
         }
 
         public bool IsOtherDay(Time time)
         {
-            if (time == null) return false;
+            int milliseconds = Millisecond + time.Millisecond;
+            int seconds = 0;
+            int minutes = 0;
+            int hours = 0;
+            int carrySeconds = milliseconds / 1000; //seconds to add if milliseconds were more than 999
 
-            return false;
+            seconds = Second + time.Second + carrySeconds;
+            int carryMinutes = seconds / 60;
+            milliseconds = milliseconds % 1000; //milliseconds remaining if higher than 999 (it gets turned into seconds)
+
+            minutes = Minute + time.Minute + carryMinutes;
+            int carryHours = minutes / 60;
+            seconds = seconds % 60;
+
+            hours = Hour + time.Hour + carryHours;
+            minutes = minutes % 60;
+
+            if (hours > 23) return true;
+            else return false;
         }
 
         public int ToMinutes()
